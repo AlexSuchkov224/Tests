@@ -75,7 +75,7 @@ if __name__ == '__main__':
 #Данный блок получает результат из функции "calculate_soil_mean", который будем сравнивать с ожидаемыми результатами.
 def calculate_soil_mean(dataframe):
     if not isinstance(dataframe, pd.DataFrame):
-        raise ValueError("Input must be a pandas dataframe")
+        raise ValueError("Wrong dataframe")
 
     means = dataframe.mean()
     result = pd.DataFrame(means, columns=["Mean"])
