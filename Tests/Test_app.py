@@ -11,7 +11,7 @@ def test_map_creater():
     default_tiles = "openstreetmap"
     marker_location = (50, 50)
 
-    #Создает карту со стандартным местополодением и масштабом.
+    #Создает карту со стандартным местоположением и масштабом.
     map_1 = map_creater(None)
     assert map_1.get_root().find_all('div', {'class': 'leaflet-top leaflet-left'})[0]['style']['left'] == f'{default_location[1]}px'
     assert map_1.get_root().find_all('div', {'class': 'leaflet-top leaflet-right'})[0]['style']['left'] == f'{default_location[0]}px'
@@ -23,7 +23,7 @@ def test_map_creater():
     assert map_1.get_root().find_all('div', {'class': 'leaflet-control-container'})[0]['style']['transform'] == 'translate(0px, 0px)'
     assert map_1.get_root().find_all('div', {'class': 'leaflet-control-scale'})[0]['style']['left'] == '50%'
 
-    #Создает карту со стандартным местополодением, масштабом и плитками.
+    #Создает карту со стандартным местоположением, масштабом и плитками.
     map_2 = map_creater(None, default_tiles=None)
     assert map_2.get_root().find_all('div', {'class': 'leaflet-tile-pane'})[0]['style']['transform'] == 'translate(0px, 0px)'
     assert map_2.get_root().find_all('img', {'class': 'leaflet-tile'})[0]['src'].endswith('tile.openstreetmap.org')
