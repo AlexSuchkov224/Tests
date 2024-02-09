@@ -10,7 +10,7 @@ from folium import Polygon
 def test_mean_elevation():
     def get_mean_elevation(polygons):
         bounding_geometry = [[[-122.38, 37.78], [-122.38, 37.88], [-122.28, 37.88], [-122.28, 37.78], [-122.38, 37.78]]]
-        expected_mean_elevation = 3778
+        expected_mean_elevation = 37.78
         actual_mean_elevation = get_mean_elevation(bounding_geometry)
         assert expected_mean_elevation == actual_mean_elevation
 
